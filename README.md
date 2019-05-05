@@ -5,6 +5,7 @@ JVM是Java Virtual Machine（Java虚拟机）的缩写，JVM是一种用于计�
 本专题主要介绍如何通过java代码来实现JVM的基础功能（搜索解析class文件、字节码命令、运行时数据区等），从而让java程序员通过最熟知的java程序，学习JVM是如何将java程序一步步跑起来的，按照
 《java虚拟机规范》与go语言版的《自己动手写Java虚拟机》实现java版虚拟机案例如下；
 
+```
 GIT代码库；https://github.com/fuzhengwei/itstack-demo-jvm
 用Java实现JVM第一章《命令行工具》
 用Java实现JVM第二章《搜索class文件》
@@ -17,3 +18,4 @@ GIT代码库；https://github.com/fuzhengwei/itstack-demo-jvm
 用Java实现JVM第九章《本地方法调用》
 
 欢迎加群共同学习底层技术(QQ群)：5398358
+简书专题：https://www.jianshu.com/c/c54223d04e3c
