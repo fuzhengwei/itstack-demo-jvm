@@ -10,6 +10,7 @@ import org.itstack.demo.jvm.rtda.heap.methodarea.Method;
 /**
  * http://www.itstack.org
  * create by fuzhengwei on 2019/4/24
+ * -Xjre "C:\Program Files\Java\jdk1.8.0_161\jre" E:\itstack\git\istack-demo\itstack-demo-jvm\itstack-demo-jvm-10\target\test-classes\org\itstack\demo\test\HelloWorld -verbose
  */
 public class Main {
 

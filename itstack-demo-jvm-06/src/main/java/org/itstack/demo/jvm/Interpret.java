@@ -40,7 +40,7 @@ class Interpret {
             }
             inst.fetchOperands(reader);
             frame.setNextPC(reader.pc());
-            System.out.format("寄存器(指令)：0x%x -> %s => 局部变量表：%s 操作数栈：%s\n", opcode, inst.getClass().getSimpleName(), JSON.toJSONString(frame.operandStack().getSlots()), JSON.toJSONString(frame.operandStack().getSlots()));
+            System.out.format("寄存器(指令)：0x%x -> %s => 局部变量表：%s 操作数栈：%s\n", opcode, inst.getClass().getSimpleName(), JSON.toJSONString(frame.localVars().getSlots()), JSON.toJSONString(frame.operandStack().getSlots()));
             //exec
             inst.execute(frame);
         }

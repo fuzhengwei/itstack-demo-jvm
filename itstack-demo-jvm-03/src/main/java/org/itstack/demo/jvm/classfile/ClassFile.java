@@ -25,25 +25,25 @@ public class ClassFile {
         this.readAndCheckMagic(reader);
         this.readAndCheckVersion(reader);
         this.constantPool = this.readConstantPool(reader);
-        this.accessFlags = reader.readU2ToInt();
-        this.thisClassIdx = reader.readU2ToInt();
-        this.supperClassIdx = reader.readU2ToInt();
-        this.interfaces = reader.readUInt16s();
+        this.accessFlags = reader.readUint16();
+        this.thisClassIdx = reader.readUint16();
+        this.supperClassIdx = reader.readUint16();
+        this.interfaces = reader.readUint16s();
         this.fields = MemberInfo.readMembers(reader, constantPool);
         this.methods = MemberInfo.readMembers(reader, constantPool);
         this.attributes = AttributeInfo.readAttributes(reader, constantPool);
     }
 
     private void readAndCheckMagic(ClassReader reader) {
-        String magic = reader.readU4ToHexStr();
-        if (!"cafebabe".equals(magic)) {
+        long magic = reader.readUint32();
+        if (magic != (0xCAFEBABE & 0x0FFFFFFFFL)) {
             throw new ClassFormatError("magic!");
         }
     }
 
     private void readAndCheckVersion(ClassReader reader) {
-        this.minorVersion = reader.readU2ToInt();
-        this.majorVersion = reader.readU2ToInt();
+        this.minorVersion = reader.readUint16();
+        this.majorVersion = reader.readUint16();
         switch (this.majorVersion) {
             case 45:
                 return;
@@ -64,15 +64,15 @@ public class ClassFile {
         return new ConstantPool(reader);
     }
 
-    public int minorVersion(){
+    public int minorVersion() {
         return this.minorVersion;
     }
 
-    public int majorVersion(){
+    public int majorVersion() {
         return this.majorVersion;
     }
 
-    public ConstantPool constantPool(){
+    public ConstantPool constantPool() {
         return this.constantPool;
     }
 

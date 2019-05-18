@@ -1,7 +1,5 @@
 package org.itstack.demo.jvm;
 
-import org.itstack.demo.jvm.classfile.ClassFile;
-import org.itstack.demo.jvm.classfile.MemberInfo;
 import org.itstack.demo.jvm.classpath.Classpath;
 import org.itstack.demo.jvm.rtda.heap.ClassLoader;
 import org.itstack.demo.jvm.rtda.heap.methodarea.Class;
@@ -15,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         Cmd cmd = Cmd.parse(args);
-        if (!cmd.ok || cmd.helpFlag) {
+        if (!cmd.ok || cmd.helpFlag || args.length == 0) {
             System.out.println("Usage: <main class> [-options] class [args...]");
             return;
         }

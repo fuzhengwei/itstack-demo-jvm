@@ -18,15 +18,15 @@ public class ConstantPool {
     private final int size;
 
     public ConstantPool(ClassReader reader) {
-        size = reader.readU2ToInt();
+        size = reader.readUint16();
         constantInfos = new ConstantInfo[size];
         for (int i = 1; i < size; i++) {
 
             constantInfos[i] = ConstantInfo.readConstantInfo(reader, this);
 
             switch (constantInfos[i].tag()) {
-                case ConstantInfo.CONSTANT_TAG_LONG:
                 case ConstantInfo.CONSTANT_TAG_DOUBLE:
+                case ConstantInfo.CONSTANT_TAG_LONG:
                     i++;
                     break;
             }
@@ -59,7 +59,7 @@ public class ConstantPool {
         this.constantInfos = constantInfos;
     }
 
-    public int getSiz() {
+    public int getSize() {
         return size;
     }
 }

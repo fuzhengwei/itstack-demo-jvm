@@ -13,7 +13,7 @@ public class ConstantLongInfo implements ConstantInfo {
 
     @Override
     public void readInfo(ClassReader reader) {
-        this.val = reader.read2U4ToLong();
+        this.val = reader.readUint64TLong();
     }
 
     @Override

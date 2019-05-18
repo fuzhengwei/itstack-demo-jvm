@@ -19,7 +19,7 @@ public class SourceFileAttribute implements AttributeInfo {
 
     @Override
     public void readInfo(ClassReader reader) {
-        this.sourceFileIdx = reader.readU2ToInt();
+        this.sourceFileIdx = reader.readUint16();
     }
 
     public String fileName(){

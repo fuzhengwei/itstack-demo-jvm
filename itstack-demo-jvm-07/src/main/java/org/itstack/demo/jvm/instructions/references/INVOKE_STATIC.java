@@ -12,6 +12,7 @@ import org.itstack.demo.jvm.rtda.heap.methodarea.Method;
 /**
  * http://www.itstack.org
  * create by fuzhengwei on 2019/4/28
+ * invokestatic调用static方法
  */
 public class INVOKE_STATIC extends InstructionIndex16 {
 

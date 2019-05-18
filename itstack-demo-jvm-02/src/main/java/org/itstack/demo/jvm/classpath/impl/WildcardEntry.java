@@ -1,7 +1,5 @@
 package org.itstack.demo.jvm.classpath.impl;
 
-import org.itstack.demo.jvm.classpath.Entry;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;

@@ -11,6 +11,9 @@ import org.itstack.demo.jvm.rtda.heap.methodarea.Method;
 import org.itstack.demo.jvm.rtda.heap.methodarea.MethodLookup;
 import org.itstack.demo.jvm.rtda.heap.methodarea.Object;
 
+/**
+ * invokevirtual调用对象实例方法 
+ */
 public class INVOKE_VIRTUAL extends InstructionIndex16 {
 
     @Override

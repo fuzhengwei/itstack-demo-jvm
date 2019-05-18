@@ -56,8 +56,7 @@ public class _System {
         }
 
         if (data instanceof char[]) {
-//            dest.data = Arrays.copyOfRange((char[]) src.data, srcPos, srcPos + length);
-            System.arraycopy(src.data, srcPos, dest.data, destPos, srcPos + length);
+            dest.data = Arrays.copyOfRange((char[]) src.data, srcPos, srcPos + length);
             return;
         }
 

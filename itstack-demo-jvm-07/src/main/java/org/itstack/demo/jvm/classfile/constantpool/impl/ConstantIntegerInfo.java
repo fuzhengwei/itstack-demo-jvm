@@ -9,11 +9,11 @@ import org.itstack.demo.jvm.classfile.constantpool.ConstantInfo;
  */
 public class ConstantIntegerInfo implements ConstantInfo {
 
-    private int val;
+    private long val;
 
     @Override
     public void readInfo(ClassReader reader) {
-        this.val = reader.readU4ToInt();
+        this.val = reader.readUint32();
     }
 
     @Override
@@ -21,7 +21,7 @@ public class ConstantIntegerInfo implements ConstantInfo {
         return this.CONSTANT_TAG_INTEGER;
     }
 
-    public int value(){
+    public long value(){
         return this.val;
     }
 

@@ -14,8 +14,8 @@ public class ConstantNameAndTypeInfo implements ConstantInfo {
 
     @Override
     public void readInfo(ClassReader reader) {
-         this.nameIdx = reader.readU2ToInt();
-         this.descIdx = reader.readU2ToInt();
+         this.nameIdx = reader.readUint16();
+         this.descIdx = reader.readUint16();
     }
 
     @Override

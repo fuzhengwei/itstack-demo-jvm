@@ -38,10 +38,9 @@ public class _Throwable {
 
         _Throwable[] stes = createStackTraceElements(thiz, frame.thread());
         thiz.setExtra(stes);
-
     }
 
-    public _Throwable[] createStackTraceElements(Object tObj, Thread thread) {
+    private _Throwable[] createStackTraceElements(Object tObj, Thread thread) {
         int skip = distanceToObject(tObj.clazz()) + 2;
         Frame[] frames = thread.getFrames();
         _Throwable[] stes = new _Throwable[frames.length - skip];
@@ -52,7 +51,7 @@ public class _Throwable {
         return stes;
     }
 
-    public int distanceToObject(Class clazz) {
+    private int distanceToObject(Class clazz) {
         int distance = 0;
         for (Class c = clazz.superClass(); c != null; c = c.superClass()) {
             distance++;
@@ -60,7 +59,7 @@ public class _Throwable {
         return distance;
     }
 
-    public _Throwable createStackTraceElement(Frame frame) {
+    private _Throwable createStackTraceElement(Frame frame) {
         Method method = frame.method();
         Class clazz = method.clazz();
         StackTraceElement stackTraceElement = new StackTraceElement();
@@ -73,7 +72,7 @@ public class _Throwable {
         return throwable;
     }
 
-    class StackTraceElement {
+    private class StackTraceElement {
         private String fileName;
         private String className;
         private String methodName;

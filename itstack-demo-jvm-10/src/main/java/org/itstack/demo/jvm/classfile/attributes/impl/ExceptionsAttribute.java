@@ -13,7 +13,7 @@ public class ExceptionsAttribute implements AttributeInfo {
 
     @Override
     public void readInfo(ClassReader reader) {
-        this.exceptionIndexTable = reader.readUInt16s();
+        this.exceptionIndexTable = reader.readUint16s();
     }
 
     public int[] exceptionIndexTable(){

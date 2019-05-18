@@ -10,6 +10,9 @@ import org.itstack.demo.jvm.rtda.heap.methodarea.Method;
 import org.itstack.demo.jvm.rtda.heap.methodarea.MethodLookup;
 import org.itstack.demo.jvm.rtda.heap.methodarea.Object;
 
+/**
+ * invokespecial调用private方法和init方法
+ */
 public class INVOKE_SPECIAL extends InstructionIndex16 {
 
     @Override

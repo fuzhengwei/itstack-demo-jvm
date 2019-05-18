@@ -1,6 +1,5 @@
 package org.itstack.demo.jvm.classfile.constantpool.impl;
 
-import org.itstack.demo.jvm.classfile.ClassReader;
 import org.itstack.demo.jvm.classfile.constantpool.ConstantPool;
 
 /**

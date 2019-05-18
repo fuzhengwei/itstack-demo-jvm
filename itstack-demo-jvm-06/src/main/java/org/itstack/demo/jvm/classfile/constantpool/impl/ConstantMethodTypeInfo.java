@@ -13,7 +13,7 @@ public class ConstantMethodTypeInfo implements ConstantInfo {
 
     @Override
     public void readInfo(ClassReader reader) {
-          this.descriptorIdx = reader.readU2ToInt();
+          this.descriptorIdx = reader.readUint16();
     }
 
     @Override

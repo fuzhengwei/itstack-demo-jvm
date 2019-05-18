@@ -17,16 +17,16 @@ public class MemberInfo {
     private int descriptorIdx;
     private AttributeInfo[] attributes;
 
-    public MemberInfo(ClassReader reader, ConstantPool constantPool) {
+    private MemberInfo(ClassReader reader, ConstantPool constantPool) {
         this.constantPool = constantPool;
-        this.accessFlags = reader.readU2ToInt();
-        this.nameIdx = reader.readU2ToInt();
-        this.descriptorIdx = reader.readU2ToInt();
+        this.accessFlags = reader.readUint16();
+        this.nameIdx = reader.readUint16();
+        this.descriptorIdx = reader.readUint16();
         this.attributes = AttributeInfo.readAttributes(reader, constantPool);
     }
 
-    public static MemberInfo[] readMembers(ClassReader reader, ConstantPool constantPool) {
-        int fieldCount = reader.readU2ToInt();
+    static MemberInfo[] readMembers(ClassReader reader, ConstantPool constantPool) {
+        int fieldCount = reader.readUint16();
         MemberInfo[] fields = new MemberInfo[fieldCount];
         for (int i = 0; i < fieldCount; i++) {
             fields[i] = new MemberInfo(reader, constantPool);

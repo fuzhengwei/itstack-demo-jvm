@@ -32,11 +32,14 @@ public class Main {
         String className = cmd.getMainClass().replace(".", "/");
         try {
             byte[] classData = cp.readClass(className);
+            
+            System.out.println(Arrays.toString(classData));
+
             System.out.println("classData：");
-            for (byte b : classData) {
-                //16进制输出
-                System.out.print(String.format("%02x", b & 0xff) + " ");
-            }
+//            for (byte b : classData) {
+//                //16进制输出
+//                System.out.print(String.format("%02x", b & 0xff) + " ");
+//            }
         } catch (Exception e) {
             System.out.println("Could not find or load main class " + cmd.getMainClass());
             e.printStackTrace();

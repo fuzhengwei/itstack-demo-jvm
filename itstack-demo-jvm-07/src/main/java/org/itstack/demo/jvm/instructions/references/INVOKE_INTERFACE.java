@@ -13,6 +13,7 @@ import org.itstack.demo.jvm.rtda.heap.methodarea.Object;
 /**
  * http://www.itstack.org
  * create by fuzhengwei on 2019/4/28
+ * invokeinterface调用接口方法
  */
 public class INVOKE_INTERFACE implements Instruction {
 

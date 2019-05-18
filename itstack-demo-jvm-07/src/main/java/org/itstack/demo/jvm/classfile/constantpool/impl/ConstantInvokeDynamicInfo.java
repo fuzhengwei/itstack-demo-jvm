@@ -15,8 +15,8 @@ public class ConstantInvokeDynamicInfo implements ConstantInfo {
 
     @Override
     public void readInfo(ClassReader reader) {
-        this.bootstrapMethodAttrIdx = reader.readU2ToInt();
-        this.nameAndTypeIdx = reader.readU2ToInt();
+        this.bootstrapMethodAttrIdx = reader.readUint16();
+        this.nameAndTypeIdx = reader.readUint16();
     }
 
     @Override

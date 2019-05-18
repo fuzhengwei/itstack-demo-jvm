@@ -10,6 +10,7 @@ import org.itstack.demo.jvm.rtda.Frame;
 import org.itstack.demo.jvm.rtda.Slot;
 import org.itstack.demo.jvm.rtda.Thread;
 
+import java.math.BigInteger;
 import java.util.logging.Logger;
 
 
@@ -45,7 +46,7 @@ class Interpret {
             }
             inst.fetchOperands(reader);
             frame.setNextPC(reader.pc());
-            System.out.println("寄存器(指令)：" + byteToHexString(new byte[]{opcode}) + " -> " + inst.getClass().getSimpleName() + " => 局部变量表：" + JSON.toJSONString(frame.operandStack().getSlots()) + " 操作数栈：" + JSON.toJSONString(frame.operandStack().getSlots()));            //exec
+            System.out.println("寄存器(指令)：" + byteToHexString(new byte[]{opcode}) + " -> " + inst.getClass().getSimpleName() + " => 局部变量表：" + JSON.toJSONString(frame.localVars().getSlots()) + " 操作数栈：" + JSON.toJSONString(frame.operandStack().getSlots()));            //exec
             inst.execute(frame);
         }
 

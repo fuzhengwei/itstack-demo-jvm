@@ -18,7 +18,7 @@ public class ConstantPool {
     private final int siz;
 
     public ConstantPool(ClassReader reader) {
-        siz = reader.readU2ToInt();
+        siz = reader.readUint16();
         constantInfos = new ConstantInfo[siz];
         for (int i = 1; i < siz; i++) {
 

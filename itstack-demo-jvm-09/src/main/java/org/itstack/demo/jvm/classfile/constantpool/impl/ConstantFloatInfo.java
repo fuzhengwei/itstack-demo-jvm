@@ -2,7 +2,6 @@ package org.itstack.demo.jvm.classfile.constantpool.impl;
 
 import org.itstack.demo.jvm.classfile.ClassReader;
 import org.itstack.demo.jvm.classfile.constantpool.ConstantInfo;
-import sun.reflect.ConstantPool;
 
 /**
  * http://www.itstack.org
@@ -14,7 +13,7 @@ public class ConstantFloatInfo implements ConstantInfo {
 
     @Override
     public void readInfo(ClassReader reader) {
-       this.val = reader.readU4ToFloat();
+       this.val = reader.readUint64TFloat();
     }
 
     @Override

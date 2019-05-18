@@ -9,6 +9,7 @@ import java.util.Arrays;
 /**
  * http://www.itstack.org
  * create by fuzhengwei on 2019/4/24
+ * -Xjre "C:\Program Files\Java\jdk1.8.0_161\jre" java.lang.String
  */
 public class Main {
 
@@ -56,11 +57,12 @@ public class Main {
         System.out.println("interfaces：" + Arrays.toString(cf.interfaceNames()));
         System.out.println("fields count：" + cf.fields().length);
         for (MemberInfo memberInfo : cf.fields()) {
-            System.out.format("  %s\n", memberInfo.name());
+            System.out.format("%s \t\t %s\n", memberInfo.name(), memberInfo.descriptor());
         }
+
         System.out.println("methods count: " + cf.methods().length);
         for (MemberInfo memberInfo : cf.methods()) {
-            System.out.format("  %s\n", memberInfo.name());
+            System.out.format("%s \t\t %s\n", memberInfo.name(), memberInfo.descriptor());
         }
     }
 

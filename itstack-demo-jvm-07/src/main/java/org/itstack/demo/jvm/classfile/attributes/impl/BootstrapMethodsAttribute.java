@@ -13,10 +13,10 @@ public class BootstrapMethodsAttribute implements AttributeInfo {
 
     @Override
     public void readInfo(ClassReader reader) {
-        int bootstrapMethodNum = reader.readU2ToInt();
+        int bootstrapMethodNum = reader.readUint16();
         bootstrapMethods = new BootstrapMethod[bootstrapMethodNum];
         for (int i = 0; i < bootstrapMethodNum; i++) {
-            bootstrapMethods[i] = new BootstrapMethod(reader.readU2ToInt(), reader.readUInt16s());
+            bootstrapMethods[i] = new BootstrapMethod(reader.readUint16(), reader.readUint16s());
         }
     }
 

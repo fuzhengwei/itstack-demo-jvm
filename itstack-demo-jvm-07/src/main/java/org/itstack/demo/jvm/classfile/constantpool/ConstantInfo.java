@@ -29,7 +29,7 @@ public interface ConstantInfo {
     int tag();
     
     static ConstantInfo readConstantInfo(ClassReader reader, ConstantPool constantPool) {
-        int tag = reader.readU1ToInt();
+        int tag = reader.readUint8();
         ConstantInfo constantInfo = newConstantInfo(tag, constantPool);
         constantInfo.readInfo(reader);
         return constantInfo;

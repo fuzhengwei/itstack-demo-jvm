@@ -42,14 +42,14 @@ public class LDC extends InstructionIndex8 {
             return;
         }
 
-        if (c instanceof ClassRef){
+        if (c instanceof ClassRef) {
             ClassRef classRef = (ClassRef) c;
             Object classObj = classRef.resolvedClass().jClass();
             stack.pushRef(classObj);
             return;
         }
 
-        throw new RuntimeException("todo ldc");
+        throw new RuntimeException("todo ldc " + c.getClass().getName());
     }
 
 }

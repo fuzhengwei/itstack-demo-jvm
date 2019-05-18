@@ -61,4 +61,10 @@ public class JvmStack {
         return this._top == null;
     }
 
+    public void clear(){
+        if (!this.isEmpty()){
+            this.pop();
+        }
+    }
+
 }

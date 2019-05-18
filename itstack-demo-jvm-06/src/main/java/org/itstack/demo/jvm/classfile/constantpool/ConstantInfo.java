@@ -27,9 +27,9 @@ public interface ConstantInfo {
     void readInfo(ClassReader reader);
 
     int tag();
-    
+
     static ConstantInfo readConstantInfo(ClassReader reader, ConstantPool constantPool) {
-        int tag = reader.readU1ToInt();
+        int tag = reader.readUint8();
         ConstantInfo constantInfo = newConstantInfo(tag, constantPool);
         constantInfo.readInfo(reader);
         return constantInfo;
@@ -66,7 +66,7 @@ public interface ConstantInfo {
             case CONSTANT_TAG_INVOKEDYNAMIC:
                 return new ConstantInvokeDynamicInfo();
             default:
-                throw new ClassFormatError("constant pool tag");
+                throw new ClassFormatError("constant pool tag " + tag);
         }
     }
 }

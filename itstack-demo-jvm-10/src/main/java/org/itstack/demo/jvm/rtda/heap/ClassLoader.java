@@ -139,8 +139,7 @@ public class ClassLoader {
                 case "C":
                 case "S":
                 case "I":
-                    java.lang.Object val = constantPool.getConstants(cpIdx);
-                    staticVars.setInt(slotId, (Integer) val);
+                    staticVars.setInt(slotId, (Integer) constantPool.getConstants(cpIdx));
                     break;
                 case "J":
                     staticVars.setLong(slotId, (Long) constantPool.getConstants(cpIdx));

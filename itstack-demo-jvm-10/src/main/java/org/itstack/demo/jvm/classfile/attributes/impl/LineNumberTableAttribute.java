@@ -13,10 +13,10 @@ public class LineNumberTableAttribute implements AttributeInfo {
 
     @Override
     public void readInfo(ClassReader reader) {
-        int lineNumberTableLength = reader.readU2ToInt();
+        int lineNumberTableLength = reader.readUint16();
         this.lineNumberTable = new LineNumberTableEntry[lineNumberTableLength];
         for (int i = 0; i < lineNumberTableLength; i++) {
-            lineNumberTable[i] = new LineNumberTableEntry(reader.readU2ToInt(), reader.readU2ToInt());
+            lineNumberTable[i] = new LineNumberTableEntry(reader.readUint16(), reader.readUint16());
         }
     }
 

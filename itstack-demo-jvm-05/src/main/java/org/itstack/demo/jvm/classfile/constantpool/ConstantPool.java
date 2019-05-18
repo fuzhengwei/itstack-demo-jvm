@@ -15,12 +15,12 @@ import java.util.Map;
 public class ConstantPool {
 
     private ConstantInfo[] constantInfos;
-    private final int siz;
+    private final int size;
 
     public ConstantPool(ClassReader reader) {
-        siz = reader.readU2ToInt();
-        constantInfos = new ConstantInfo[siz];
-        for (int i = 1; i < siz; i++) {
+        size = reader.readUint16();
+        constantInfos = new ConstantInfo[size];
+        for (int i = 1; i < size; i++) {
 
             constantInfos[i] = ConstantInfo.readConstantInfo(reader, this);
 
@@ -59,7 +59,7 @@ public class ConstantPool {
         this.constantInfos = constantInfos;
     }
 
-    public int getSiz() {
-        return siz;
+    public int getSize() {
+        return size;
     }
 }

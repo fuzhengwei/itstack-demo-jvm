@@ -1,10 +1,12 @@
 package org.itstack.demo.jvm.instructions.references;
 
+import org.itstack.demo.jvm._native.java._Throwable;
 import org.itstack.demo.jvm.instructions.base.InstructionNoOperands;
 import org.itstack.demo.jvm.rtda.Frame;
 import org.itstack.demo.jvm.rtda.OperandStack;
 import org.itstack.demo.jvm.rtda.Thread;
 import org.itstack.demo.jvm.rtda.heap.methodarea.Object;
+import org.itstack.demo.jvm.rtda.heap.methodarea.StringPool;
 
 /**
  * http://www.itstack.org
@@ -18,9 +20,14 @@ public class ATHROW extends InstructionNoOperands {
         if (ex == null) {
             throw new NullPointerException();
         }
+
+        Thread thread = frame.thread();
+        if (!findAndGotoExceptionHandler(thread, ex)) {
+            handleUncaughtException(thread, ex);
+        }
     }
 
-    public boolean findAndGotoExceptionHandler(Thread thread, Object ex) {
+    private boolean findAndGotoExceptionHandler(Thread thread, Object ex) {
         do {
             Frame frame = thread.currentFrame();
             int pc = frame.nextPC() - 1;
@@ -38,4 +45,23 @@ public class ATHROW extends InstructionNoOperands {
         } while (!thread.isStackEmpty());
         return false;
     }
+
+    private void handleUncaughtException(Thread thread, Object ex) {
+        thread.clearStack();
+
+        Object jMsg = ex.getRefVar("detailMessage", "Ljava/lang/String;");
+
+        String msg = StringPool.goString(jMsg);
+
+        System.out.println(ex.clazz().javaName() + "：" + msg);
+
+        java.lang.Object extra = ex.extra();
+
+        _Throwable[] throwables = (_Throwable[]) extra;
+        for (_Throwable t : throwables) {
+            System.out.println(t.string());
+        }
+
+    }
+
 }

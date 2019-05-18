@@ -55,7 +55,7 @@ class Interpret {
         String className = method.clazz().name();
         String methodName = method.name();
         String outStr = (className + "." + methodName + "() \t") +
-                "寄存器(指令)：" + byteToHexString(new byte[]{opcode}) + " -> " + inst.getClass().getSimpleName() + " => 局部变量表：" + JSON.toJSONString(frame.operandStack().getSlots()) + " 操作数栈：" + JSON.toJSONString(frame.operandStack().getSlots());
+                "寄存器(指令)：" + byteToHexString(new byte[]{opcode}) + " -> " + inst.getClass().getSimpleName() + " => 局部变量表：" + JSON.toJSONString(frame.localVars().getSlots()) + " 操作数栈：" + JSON.toJSONString(frame.operandStack().getSlots());
         System.out.println(outStr);
     }
 

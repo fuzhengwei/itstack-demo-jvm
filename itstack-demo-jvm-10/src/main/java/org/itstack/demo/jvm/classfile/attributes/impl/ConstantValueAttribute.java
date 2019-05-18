@@ -13,7 +13,7 @@ public class ConstantValueAttribute implements AttributeInfo {
 
     @Override
     public void readInfo(ClassReader reader) {
-        this.constantValueIdx = reader.readU2ToInt();
+        this.constantValueIdx = reader.readUint16();
     }
 
     public int constantValueIdx(){

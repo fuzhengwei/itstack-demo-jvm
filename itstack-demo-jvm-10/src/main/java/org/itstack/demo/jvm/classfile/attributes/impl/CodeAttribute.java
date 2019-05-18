@@ -23,9 +23,9 @@ public class CodeAttribute implements AttributeInfo {
 
     @Override
     public void readInfo(ClassReader reader) {
-        this.maxStack = reader.readU2ToInt();
-        this.maxLocals = reader.readU2ToInt();
-        int dataLength = reader.readU4ToInt();
+        this.maxStack = reader.readUint16();
+        this.maxLocals = reader.readUint16();
+        int dataLength = reader.readUint32TInteger();
         this.data = reader.readBytes(dataLength);
         this.exceptionTable = ExceptionTableEntry.readExceptionTable(reader);
         this.attributes = AttributeInfo.readAttributes(reader, this.constantPool);
@@ -49,8 +49,8 @@ public class CodeAttribute implements AttributeInfo {
 
     public LineNumberTableAttribute lineNumberTableAttribute() {
         for (AttributeInfo attrInfo : this.attributes) {
-            if (attrInfo instanceof LineNumberTableAttribute){
-              return (LineNumberTableAttribute) attrInfo;
+            if (attrInfo instanceof LineNumberTableAttribute) {
+                return (LineNumberTableAttribute) attrInfo;
             }
         }
         return null;
@@ -75,10 +75,10 @@ public class CodeAttribute implements AttributeInfo {
         }
 
         static ExceptionTableEntry[] readExceptionTable(ClassReader reader) {
-            int exceptionTableLength = reader.readU2ToInt();
+            int exceptionTableLength = reader.readUint16();
             ExceptionTableEntry[] exceptionTable = new ExceptionTableEntry[exceptionTableLength];
             for (int i = 0; i < exceptionTableLength; i++) {
-                exceptionTable[i] = new ExceptionTableEntry(reader.readU2ToInt(), reader.readU2ToInt(), reader.readU2ToInt(), reader.readU2ToInt());
+                exceptionTable[i] = new ExceptionTableEntry(reader.readUint16(), reader.readUint16(), reader.readUint16(), reader.readUint16());
             }
             return exceptionTable;
         }

@@ -19,7 +19,7 @@ public class ConstantClassInfo implements ConstantInfo {
 
     @Override
     public void readInfo(ClassReader reader) {
-         this.nameIdx = reader.readU2ToInt();
+         this.nameIdx = reader.readUint16();
     }
 
     public String name(){

@@ -15,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
         Cmd cmd = Cmd.parse(args);
-        if (!cmd.ok || cmd.helpFlag) {
+        if (!cmd.ok || cmd.helpFlag || args.length == 0) {
             System.out.println("Usage: <main class> [-options] class [args...]");
             return;
         }

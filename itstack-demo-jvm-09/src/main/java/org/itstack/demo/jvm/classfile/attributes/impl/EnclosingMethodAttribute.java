@@ -24,8 +24,8 @@ public class EnclosingMethodAttribute implements AttributeInfo {
 
     @Override
     public void readInfo(ClassReader reader) {
-        this.classIdx = reader.readU2ToInt();
-        this.methodIdx = reader.readU2ToInt();
+        this.classIdx = reader.readUint16();
+        this.methodIdx = reader.readUint16();
     }
 
     public String className() {

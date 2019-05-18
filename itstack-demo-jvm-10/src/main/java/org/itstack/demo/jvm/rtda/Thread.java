@@ -51,6 +51,10 @@ public class Thread {
         return this.stack.isEmpty();
     }
 
+    public void clearStack(){
+        this.stack.clear();
+    }
+
     public Frame newFrame(Method method) {
         return new Frame(this, method);
     }
