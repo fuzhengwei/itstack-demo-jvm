@@ -9,17 +9,17 @@
 
 
 ## 章节列表
-- [用Java实现JVM第一章《命令行工具》](https://bugstack.cn/?p=59)
-- [用Java实现JVM第二章《搜索class文件》](https://bugstack.cn/?p=60)
-- [用Java实现JVM第三章《解析class文件》](https://bugstack.cn/?p=63)
-- [用Java实现JVM第三章《解析class文件》附[classReader拆解]](https://bugstack.cn/?p=64)
-- [用Java实现JVM第四章《运行时数据区》](https://bugstack.cn/?p=66)
-- [用Java实现JVM第五章《指令集和解释器》](https://bugstack.cn/?p=68)
-- [用Java实现JVM第六章《类和对象》](https://bugstack.cn/?p=69)
-- [用Java实现JVM第七章《方法调用和返回》](https://bugstack.cn/?p=72)
-- [用Java实现JVM第八章《数组和字符串》](https://bugstack.cn/?p=73)
-- [用Java实现JVM第九章《本地方法调用》](https://bugstack.cn/?p=74)
-- [用Java实现JVM第十章《异常处理》](https://bugstack.cn/?p=75)
+- [用Java实现JVM第一章《命令行工具》](https://github.com/fuzhengwei/itstack-demo-jvm)
+- [用Java实现JVM第二章《搜索class文件》](https://github.com/fuzhengwei/itstack-demo-jvm)
+- [用Java实现JVM第三章《解析class文件》](https://github.com/fuzhengwei/itstack-demo-jvm)
+- [用Java实现JVM第三章《解析class文件》附[classReader拆解]](https://github.com/fuzhengwei/itstack-demo-jvm)
+- [用Java实现JVM第四章《运行时数据区》](https://github.com/fuzhengwei/itstack-demo-jvm)
+- [用Java实现JVM第五章《指令集和解释器》](https://github.com/fuzhengwei/itstack-demo-jvm)
+- [用Java实现JVM第六章《类和对象》](https://github.com/fuzhengwei/itstack-demo-jvm)
+- [用Java实现JVM第七章《方法调用和返回》](https://github.com/fuzhengwei/itstack-demo-jvm)
+- [用Java实现JVM第八章《数组和字符串》](https://github.com/fuzhengwei/itstack-demo-jvm)
+- [用Java实现JVM第九章《本地方法调用》](https://github.com/fuzhengwei/itstack-demo-jvm)
+- [用Java实现JVM第十章《异常处理》](https://github.com/fuzhengwei/itstack-demo-jvm)
 
 ------------
 
